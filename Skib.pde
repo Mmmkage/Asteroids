@@ -20,7 +20,6 @@ class Skib {
     //retnings bestemmelse
     xSkib += xSpeed; 
     ySkib += ySpeed;
-    
   }
 
   void skiftRetning() {
@@ -42,14 +41,20 @@ class Skib {
     else if (keyCode == 38) {
       xSpeed += cos(radians(retning));
       ySpeed += sin(radians(retning));
-        //println(retning);
+      //println(retning);
       keyCode = 0;
     }
     //pil ned/stop 
     else if (keyCode == 40) {
       xSpeed = 0;
       ySpeed = 0;
-        keyCode = 0;
+      keyCode = 0;
+    } 
+    //Skyd
+    else if (keyCode == 17) {
+      println("skud gået" + skudArrIndex);
+      keyCode = 0;
+      skudArrIndex +=1;
     } else {
       //println(keyCode);
     }

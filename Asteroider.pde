@@ -31,7 +31,7 @@ class Asteroider {
 
 
   // Display asteroide
-  void display() {
+  void displayAst() {
     stroke(0);
     fill(c);
     ellipse(xAst, yAst, r*2, r*2);
