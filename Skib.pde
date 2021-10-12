@@ -52,8 +52,9 @@ class Skib {
     } 
     //Skyd
     else if (keyCode == 17) {
-      println("skud gået" + skudArrIndex);
+      println("skud gået " + skudArrIndex);
       keyCode = 0;
+      skudArr[skudArrIndex] = new Skud(retning);
       skudArrIndex +=1;
     } else {
       //println(keyCode);

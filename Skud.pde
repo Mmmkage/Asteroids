@@ -3,21 +3,26 @@ class Skud {
   //initialisering  
   float r; // radius
   float xSkud, ySkud;
-  color c = color(100, 50);
+  float xSpeed, ySpeed;
+  color c = color(255, 0, 0);
   //opret skud array
   //Skud nytSkud = new Skud();
 
-
+  Skud(float retningTemp) {
+    xSkud = mitSkib.xSkib; 
+    ySkud = mitSkib.ySkib;
+    xSpeed = cos(radians(retningTemp));
+    ySpeed = sin(radians(retningTemp));
+  }
   // Display asteroide
   void displaySkud() {
-    stroke(0);
+    stroke(2);
     fill(c);
     ellipse(xSkud, ySkud, 2, 2);
   }
   void moveSkud() {
     //retnings bestemmelse
-    xSkud += mitSkib.xSpeed; 
-    ySkud += mitSkib.ySpeed;
-    
+    xSkud += xSpeed; 
+    ySkud += ySpeed;
   }
 }

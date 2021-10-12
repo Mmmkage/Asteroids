@@ -1,13 +1,13 @@
 
 //hvor mange asteroider skal der være til at starte med. 
 int numberOfAst;
-float retning;
 //opret asteroinde array
 Asteroider asteroiderArr[] = new Asteroider[100];
-Skud skudArr[] = new Skud[1000];
 int skudArrIndex;
+Skud skudArr[] = new Skud[1000];
 
 
+ 
 
 //tegn skibet
 Skib mitSkib = new Skib();
@@ -20,6 +20,7 @@ void setup() {
   for (int i = 0; i < numberOfAst; i++ ) {
     asteroiderArr[i] = new Asteroider(random(32));
   }
+
   skudArrIndex = 0;
 }
 
@@ -31,14 +32,15 @@ void draw() {
     asteroiderArr[i].displayAst();
   }
   //flyt ryndt på Skud
+
   for (int i = 0; i < skudArrIndex; i ++ ) {
-    skudArr[skudArrIndex].moveSkud();
-    skudArr[skudArrIndex].displaySkud();
+    if (skudArr[i] != null) {
+      skudArr[i].displaySkud();
+      skudArr[i].moveSkud();
+    }
   }
   //flyt skibet
   mitSkib.display(20);
   mitSkib.skiftRetning();
   mitSkib.move();
-  retning = mitSkib.retning;
-  println(mitSkib.xSkib);
 }
