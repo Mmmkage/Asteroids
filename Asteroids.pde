@@ -27,16 +27,25 @@ void setup() {
 void draw() {
   background(255);
   //flyt ryndt på asteroiderne
-  for (int i = 0; i < numberOfAst; i ++ ) {
+  for (int i = 0; i < numberOfAst; i++ ) {
     asteroiderArr[i].move();
     asteroiderArr[i].displayAst();
   }
   //flyt ryndt på Skud
 
-  for (int i = 0; i < skudArrIndex; i ++ ) {
+  for (int i = 0; i < skudArrIndex; i++ ) {
     if (skudArr[i] != null) {
       skudArr[i].displaySkud();
       skudArr[i].moveSkud();
+      //Når skud og asteroider er flytte, så se om nogen af dem har ramt hinanden.
+      for (int x = 0; x < numberOfAst; x++ ) {
+        if(asteroiderArr[x].intersect(skudArr[i])){
+          asteroiderArr[x].xAst = 0;
+          asteroiderArr[x].yAst = 0;
+          asteroiderArr[x].xSpeed = 0;
+          asteroiderArr[x].ySpeed = 0;
+        }
+      }
     }
   }
   //flyt skibet

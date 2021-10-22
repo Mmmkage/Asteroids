@@ -37,14 +37,12 @@ class Asteroider {
     ellipse(xAst, yAst, r*2, r*2);
   }
 
-  // A function that returns true or false based on whether two circles intersect
-  // If distance is less than the sum of radii the circles touch
-  boolean intersect(Asteroider b) {
+//Er asteroide objectet ramt at et skud 
+  boolean intersect(Skud b) {
+//Mål afstanden mellen de to objeckter
+    float distance = dist(xAst, yAst, b.xSkud, b.ySkud); 
 
-    // Objects can be passed into functions as arguments too! 
-    float distance = dist(xAst, yAst, b.xAst, b.yAst); // Calculate distance
-
-    // Compare distance to sum of radii
+// Sammenlign distanse til summen af de to radius
     if (distance < r + b.r) {
       return true;
     } else {

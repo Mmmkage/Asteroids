@@ -20,6 +20,22 @@ class Skib {
     //retnings bestemmelse
     xSkib += xSpeed; 
     ySkib += ySpeed;
+    if (xSkib >= width || xSkib <= 0) {
+      xSpeed = 0;
+      if (xSkib >= width) {
+        xSkib -= 5;
+      } else {
+        xSkib += 5;
+      }
+    }
+    if (ySkib >= height || ySkib <= 0) {
+      ySpeed = 0;
+      if (ySkib >= height) {
+        ySkib -= 5;
+      } else {
+        ySkib += 5;
+      }
+    }
   }
 
   void skiftRetning() {
@@ -31,33 +47,36 @@ class Skib {
     if (keyCode == 39) {
       retning += 2;
       keyCode = 0;
+      return;
     }
     //Venstre 
-    else if (keyCode == 37) {
+    if (keyCode == 37) {
       retning -= 2;
       keyCode = 0;
+      return;
     }
     //pil op/start
-    else if (keyCode == 38) {
+    if (keyCode == 38) {
       xSpeed += cos(radians(retning));
       ySpeed += sin(radians(retning));
       //println(retning);
       keyCode = 0;
+      return;
     }
     //pil ned/stop 
-    else if (keyCode == 40) {
+    if (keyCode == 40) {
       xSpeed = 0;
       ySpeed = 0;
       keyCode = 0;
+      return;
     } 
     //Skyd
-    else if (keyCode == 17) {
+    if (keyCode == 17) {
       println("skud gået " + skudArrIndex);
       keyCode = 0;
       skudArr[skudArrIndex] = new Skud(retning);
       skudArrIndex +=1;
-    } else {
-      //println(keyCode);
+      return;
     }
   }
 

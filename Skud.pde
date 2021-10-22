@@ -13,12 +13,13 @@ class Skud {
     ySkud = mitSkib.ySkib;
     xSpeed = cos(radians(retningTemp));
     ySpeed = sin(radians(retningTemp));
+    r = 2;
   }
   // Display asteroide
   void displaySkud() {
     stroke(2);
     fill(c);
-    ellipse(xSkud, ySkud, 2, 2);
+    ellipse(xSkud, ySkud, r, r);
   }
   void moveSkud() {
     //retnings bestemmelse
