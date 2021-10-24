@@ -2,17 +2,26 @@
 class Scoreboard {
   //Calibri-48.vlw
   PFont f;
-  String testText;
+  //String testText;
+  int score;
 
   Scoreboard() {
-    testText = "Hello world";
+    //testText = "Hello world";
+    score = 0;
   }
 
-  void scoreTest() {
+  /*void scoreTest() {
     int textSize = 20;
     textFont(f, textSize);
     textAlign(RIGHT);
     text(testText, width-textSize, textSize);
     println(testText.length());
+  }*/
+  
+  void score() {
+    int textSize = 20;
+    textFont(f, textSize);
+    textAlign(RIGHT);
+    text(score, width-textSize, textSize);
   }
 }

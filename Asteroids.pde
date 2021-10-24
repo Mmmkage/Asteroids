@@ -47,13 +47,10 @@ void draw() {
   //flyt ryndt på asteroiderne
   for (int i = 0; i < numberOfAst; i++ ) {
     asteroiderArr[i].move();
-    asteroiderArr[i].displayAst();
   }
   //flyt ryndt på Skud
-
   for (int i = 0; i < skudArrIndex; i++ ) {
     if (skudArr[i] != null) {
-      skudArr[i].displaySkud();
       skudArr[i].moveSkud();
       //Når skud og asteroider er flyttet, så se om nogen af dem har ramt hinanden.
       for (int x = 0; x < numberOfAst; x++ ) {
@@ -62,13 +59,14 @@ void draw() {
           asteroiderArr[x].yAst = 0;
           asteroiderArr[x].xSpeed = 0;
           asteroiderArr[x].ySpeed = 0;
+          board.score +=1;
         }
       }
     }
   }
   //flyt skibet
-  mitSkib.display(20);
-  mitSkib.skiftRetning();
+  //mitSkib.display();
+  //mitSkib.skiftRetning();
   mitSkib.move();
-  board.scoreTest();
+  board.score();
 }

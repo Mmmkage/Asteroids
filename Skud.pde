@@ -25,5 +25,6 @@ class Skud {
     //retnings bestemmelse
     xSkud += xSpeed; 
     ySkud += ySpeed;
+    displaySkud();
   }
 }

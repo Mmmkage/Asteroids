@@ -27,6 +27,7 @@ class Asteroider {
     if (yAst > height || yAst < 0) {
       ySpeed *= -1;
     }
+    displayAst();
   }
 
 
@@ -49,6 +50,7 @@ class Asteroider {
       return false;
     }
   }
+  
   void changeDir() {
     ySpeed *= -1;
     xSpeed *= -1;

@@ -36,11 +36,13 @@ class Skib {
         ySkib += 5;
       }
     }
+    display();
+    skiftRetning();
   }
-
   void skiftRetning() {
     keyPressed();
   }
+
 
   void keyPressed() {
     //Højre
@@ -81,8 +83,8 @@ class Skib {
   }
 
 
-  void display(float r_) {
-    float r=r_;
+  void display() {
+    float r=20;
     float x1 =xSkib+ cos(radians(retning)) * r;
     float y1 =ySkib+ sin(radians(retning)) * r;
 
