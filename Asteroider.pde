@@ -29,7 +29,15 @@ class Asteroider {
     }
     displayAst();
   }
-
+  //asteroide ramt
+  void hitAst() {
+    xAst = 0;
+    yAst = 0;
+    xSpeed = 0;
+    ySpeed = 0;
+    board.score +=1;
+    r = 0;
+  }
 
   // Display asteroide
   void displayAst() {
@@ -38,19 +46,19 @@ class Asteroider {
     ellipse(xAst, yAst, r*2, r*2);
   }
 
-//Er asteroide objectet ramt at et skud 
+  //Er asteroide objectet ramt at et skud 
   boolean intersect(Skud b) {
-//Mål afstanden mellen de to objeckter
+    //Mål afstanden mellen de to objeckter
     float distance = dist(xAst, yAst, b.xSkud, b.ySkud); 
 
-// Sammenlign distanse til summen af de to radius
+    // Sammenlign distanse til summen af de to radius
     if (distance < r + b.r) {
       return true;
     } else {
       return false;
     }
   }
-  
+
   void changeDir() {
     ySpeed *= -1;
     xSpeed *= -1;

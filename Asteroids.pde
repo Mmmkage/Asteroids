@@ -1,18 +1,18 @@
 /*
 TODO
-SCORE BOARD Class
-String af tekst der opdaterer når en asteroide er ramt evt. point
-Når skib bliver ramt trækkes der point fra. Går du i minus slutter spillet
-
-MAIN Class
-Flyt elementer der ikke er nødvendige.
-
-SKIB Class
-Få skibet til at ligne et noget... Eventuelt et rumskib
-
-Asteroider Class
-Asteroider har typisk kratere. måske mine også burde have sådan nogen..
-*/
+ SCORE BOARD Class
+ String af tekst der opdaterer når en asteroide er ramt evt. point
+ Når skib bliver ramt trækkes der point fra. Går du i minus slutter spillet
+ 
+ MAIN Class
+ Flyt elementer der ikke er nødvendige.
+ 
+ SKIB Class
+ Få skibet til at ligne et noget... Eventuelt et rumskib
+ 
+ Asteroider Class
+ Asteroider har typisk kratere. måske mine også burde have sådan nogen..
+ */
 
 
 
@@ -24,7 +24,7 @@ int skudArrIndex;
 Skud skudArr[] = new Skud[1000];
 
 
- 
+
 
 //tegn skibet
 Skib mitSkib = new Skib();
@@ -54,12 +54,8 @@ void draw() {
       skudArr[i].moveSkud();
       //Når skud og asteroider er flyttet, så se om nogen af dem har ramt hinanden.
       for (int x = 0; x < numberOfAst; x++ ) {
-        if(asteroiderArr[x].intersect(skudArr[i])){
-          asteroiderArr[x].xAst = 0;
-          asteroiderArr[x].yAst = 0;
-          asteroiderArr[x].xSpeed = 0;
-          asteroiderArr[x].ySpeed = 0;
-          board.score +=1;
+        if (asteroiderArr[x].intersect(skudArr[i])) {
+          asteroiderArr[x].hitAst();
         }
       }
     }

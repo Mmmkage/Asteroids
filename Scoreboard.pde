@@ -22,6 +22,6 @@ class Scoreboard {
     int textSize = 20;
     textFont(f, textSize);
     textAlign(RIGHT);
-    text(score, width-textSize, textSize);
+    text("point " + score, width-textSize, textSize);
   }
 }
