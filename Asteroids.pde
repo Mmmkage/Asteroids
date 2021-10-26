@@ -1,5 +1,5 @@
-/*
-TODO
+/*---------------------------------------------------------------------------
+ TODO
  SCORE BOARD Class
  String af tekst der opdaterer når en asteroide er ramt evt. point
  Når skib bliver ramt trækkes der point fra. Går du i minus slutter spillet
@@ -12,19 +12,17 @@ TODO
  
  Asteroider Class
  Asteroider har typisk kratere. måske mine også burde have sådan nogen..
- */
-
+ --------------------------------------------------------------------------*/
 
 
 //hvor mange asteroider skal der være til at starte med. 
 int numberOfAst;
-//opret asteroinde array
-Asteroider asteroiderArr[] = new Asteroider[100];
+//opret asteroinde array med plads til op til 10 asteroider.
+Asteroider asteroiderArr[] = new Asteroider[10];
+
+//opret Skud array med plads til op til 1000 Skud.
 int skudArrIndex;
 Skud skudArr[] = new Skud[1000];
-
-
-
 
 //tegn skibet
 Skib mitSkib = new Skib();
@@ -38,8 +36,8 @@ void setup() {
   for (int i = 0; i < numberOfAst; i++ ) {
     asteroiderArr[i] = new Asteroider(random(32));
   }
+  //For at sikre fonten bliver loaded loader jeg den i setup
   board.f = loadFont("Calibri-48.vlw");
-  skudArrIndex = 0;
 }
 
 void draw() {
@@ -60,9 +58,6 @@ void draw() {
       }
     }
   }
-  //flyt skibet
-  //mitSkib.display();
-  //mitSkib.skiftRetning();
   mitSkib.move();
   board.score();
 }

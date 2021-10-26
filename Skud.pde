@@ -15,7 +15,7 @@ class Skud {
     ySpeed = sin(radians(retningTemp));
     r = 2;
   }
-  // Display asteroide
+  // Display skud
   void displaySkud() {
     stroke(2);
     fill(c);

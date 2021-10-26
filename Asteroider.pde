@@ -29,10 +29,10 @@ class Asteroider {
     }
     displayAst();
   }
-  //asteroide ramt
+  //asteroide ramt flyt den ud over kanten af game board og gør den umulig at ramme igen
   void hitAst() {
-    xAst = 0;
-    yAst = 0;
+    xAst = -1;
+    yAst = -1;
     xSpeed = 0;
     ySpeed = 0;
     board.score +=1;

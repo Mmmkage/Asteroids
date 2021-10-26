@@ -15,7 +15,11 @@ class Skib {
     ySpeed = 0;
     r = 5;
     retning = 0;
+    
   }
+
+  //metoder / funktioner
+
   void move() {
     //retnings bestemmelse
     xSkib += xSpeed; 
@@ -61,7 +65,6 @@ class Skib {
     if (keyCode == 38) {
       xSpeed += cos(radians(retning));
       ySpeed += sin(radians(retning));
-      //println(retning);
       keyCode = 0;
       return;
     }
@@ -87,7 +90,6 @@ class Skib {
     float r=20;
     float x1 =xSkib+ cos(radians(retning)) * r;
     float y1 =ySkib+ sin(radians(retning)) * r;
-
     float x2 =xSkib+ cos(radians(retning+120)) * r;
     float y2 =ySkib+ sin(radians(retning+120)) * r;
     float x3 =xSkib+ cos(radians(retning+240)) * r;
